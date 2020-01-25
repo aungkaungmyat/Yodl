@@ -103,3 +103,8 @@ body {
   display: block;
   object-fit: fill !important;
 }
+
+#lyricVideo {
+  width: 90%;
+  height: 80%;
+}
