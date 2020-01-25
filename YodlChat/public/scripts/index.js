@@ -90,7 +90,14 @@ $('#submitSong').click((event) => {
 })
 
 function loadVideo(data, status) {
-  console.log('data and status: ' + data + ' ' + status)
+  if (status == 'success') {
+    // $('#lyricVideo').src = data
+    var url = data.replace("watch?v=", "embed/");
+    document.querySelector('#lyricVideo').src = url
+    console.log('data and status: ' + data + ' ' + status)
+  } else {
+    console.log('error')
+  }
 }
 
 socket.on("connect", () => {
