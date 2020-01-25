@@ -45,7 +45,7 @@ module.exports = class Server {
   }
 
   getNextRoom(data) {
-    if (Object.keys(this.rooms[this.nextRoomID].userStreams).length == 3) {
+    if (Object.keys(this.rooms[this.nextRoomID].userStreams).length == 2) {
       this.nextRoom()
     }
     this.rooms[this.nextRoomID].userStreams[data.uid] = data
@@ -54,28 +54,57 @@ module.exports = class Server {
   
   handleSocketConnection() {
     this.io.on("connection", socket => {
-
       socket.on("join", data => {
         const roomID = this.getNextRoom({
-          uid: randomstring.generate(),
+          uid: socket.id,
           socket,
           streamData: {}
         })
 
         socket.join(roomID)
 
-        console.log("Should have joined room", this.nextRoomID)
+        if (Object.keys(this.rooms[roomID].userStreams).length == 2) {
+          this.io.in(roomID).emit("room_ready", roomID)
+          console.log("the room",this.rooms[roomID])
 
-        socket.emit("join_accept", this.nextRoomID)
+          // Determine initiator
+          const initiatorKey = Object.keys(this.rooms[roomID].userStreams)[0]
+          const receptorKey = Object.keys(this.rooms[roomID].userStreams)[1]
+  
+          const initiatorSocket = this.rooms[roomID].userStreams[initiatorKey].socket
+          const receptorSocket = this.rooms[roomID].userStreams[receptorKey].socket
+
+          this.io.to(initiatorSocket.id).emit("start_offer")
+
+          initiatorSocket.on("video", (data) => {
+            console.log("I: Got data from", initiatorSocket.id, "should send to", receptorSocket.id, data)
+            this.io.to(receptorSocket.id).emit("video",data)
+          })
+
+          receptorSocket.on("video", (data) => {
+            console.log("R: Got data from", receptorSocket.id, "should send to", initiatorSocket.id, data)
+            this.io.to(initiatorSocket.id).emit("video",data)
+          })
+
+          // socket.on("video", (data) => {
+          //   if (data.type === "offer") {
+          //     console.log("Got offer from", socket.id, "should send to", receptorKey)
+          //     this.io.to(receptorSocket).emit("video",data)
+          //   } else if (data.type === "answer") {
+          //     this.io.to(initiatorSocket).emit("video",data)
+          //   } else {
+          //     socket.emit("video", data)
+          //   }
+          //   console.log(data)
+          // })
+        }
+
+        console.log("Should have joined room", this.nextRoomID, this.rooms[this.nextRoomID])
       })
-
 
       console.log("Socket connected.");
 
-      socket.on("video", (data) => {
-        console.log(data)
-        socket.emit("")
-      })
+      
     })
   }
 

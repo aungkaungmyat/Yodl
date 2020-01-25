@@ -67,41 +67,89 @@ const PROD = false;
 
 const socket = PROD ? io.connect("https://yodl.aws.andrewarpasi.com") : io.connect("localhost:7007")
 
-navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-.then(function(stream) {
-  console.log(stream)
-    const localVideo = document.getElementById("local-video");
-    if (localVideo) {
-      localVideo.srcObject = stream;
-    }
-  /* use the stream */
-})
-.catch(function(err) {
-  /* handle the error */
-});
+let offerCreated = false
+let activeStream = null
+
+const { RTCPeerConnection, RTCSessionDescription } = window
+const peerConnection = new RTCPeerConnection();
+
+const startVideo = () => {
+  navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then(function(stream) {
+    console.log(stream)
+      const localVideo = document.getElementById("local-video");
+      if (localVideo) {
+        localVideo.srcObject = stream;
+      }
+
+      stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
+      /* use the stream */
+  })
+  .catch(function(err) {
+    /* handle the error */
+  });
+}
 
 socket.on("connect", () => {
   console.log("Sawkit kernekted")
 
-  socket.emit("video", {hello: "world"})
+  console.log("id: ", socket.id)
 
-  socket.emit("join", {})
-
-  socket.on("join_accept", session => {
+  socket.on("room_ready", roomID => {
     // start sending video
-    console.log("Joined room", session)
+    console.log("Joined room", roomID)
 
     socket.on("video", data => {
-      console.log('recvd data', data)
+      console.log("Got video data", data)
+      if (data.type === "offer") {
+        console.log("Got an offer!")
+        peerConnection.createAnswer().then(answer => {
+          peerConnection.setLocalDescription(new RTCSessionDescription(answer)).then(() => {
+            socket.emit("video", {
+              roomID,
+              type: "answer",
+              answer,
+            })
+          })
+        })
+      }
+      if (data.type === "answer") {
+        activeStream.getTracks().forEach(track => peerConnection.addTrack(track, activeStream));
+      }
+      //console.log('recvd data', data)
     })
   })
 
-
-
-  // axios.get('/get_room').then(response => {
-  // })
-  // socket.emit('video')
+  socket.on("chat_ready", roomID => {
+    
+  })
 })
+
+// Create offer to join video session
+const runKaraoke = () => {
+  document.getElementById('statusLabel').innerText = "Awaiting peer to join..."
+
+  socket.emit("join", {})
+
+  socket.on("start_offer", roomID => {
+    document.getElementById('statusLabel').innerText = "In room with peer."
+
+    setTimeout(() => {
+      peerConnection.createOffer().then(offer => {
+        peerConnection.setLocalDescription(new RTCSessionDescription(offer)).then(() => {
+          console.log("Emitting offer", offer)
+          socket.emit("video", {
+            roomID,
+            type: "offer",
+            offer,
+          })
+        })
+      })
+    }, 250)
+
+    offerCreated = true;
+  })
+}
 
 // navigator.mediaDevices.getUserMedia(
 //   { video: true, audio: true },
