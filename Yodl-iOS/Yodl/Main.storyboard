@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3R-l5-Qpe">
+    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="VKm-SS-UkR">
+            <objects>
+                <viewController id="P3R-l5-Qpe" customClass="ViewController" customModule="Yodl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bi9-Eo-tSI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yodl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AK-gR-0PE">
+                                <rect key="frame" x="138" y="44" width="99" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="9VQ-mV-Bu2"/>
+                                    <constraint firstAttribute="width" constant="99" id="QCs-lM-gZn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-Tt-gAW">
+                                <rect key="frame" x="20" y="578" width="335" height="180"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Ydr-G7-87U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="music.mic" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="bottom" secondItem="DWb-Tt-gAW" secondAttribute="bottom" constant="20" id="9lR-jQ-S8E"/>
+                            <constraint firstItem="9AK-gR-0PE" firstAttribute="top" secondItem="p7H-6G-e3Y" secondAttribute="top" id="dA2-1R-ry9"/>
+                            <constraint firstItem="DWb-Tt-gAW" firstAttribute="leading" secondItem="p7H-6G-e3Y" secondAttribute="leading" constant="20" id="jJP-b3-F5w"/>
+                            <constraint firstItem="9AK-gR-0PE" firstAttribute="centerX" secondItem="bi9-Eo-tSI" secondAttribute="centerX" id="v3R-H3-O1Z"/>
+                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="trailing" secondItem="DWb-Tt-gAW" secondAttribute="trailing" constant="20" id="zbr-38-iNo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p7H-6G-e3Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMa-ny-UpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="-44.366197183098592"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="music.mic" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
