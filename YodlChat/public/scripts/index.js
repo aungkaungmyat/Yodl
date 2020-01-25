@@ -80,6 +80,19 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
   /* handle the error */
 });
 
+$('#submitSong').click((event) => {
+  $.ajax({
+    type: "POST",
+    url: '/searchsong',
+    data: $("#songSearch").serialize(),
+    success: loadVideo
+  });
+})
+
+function loadVideo() {
+  console.log('video should be loaded here')
+}
+
 // navigator.mediaDevices.getUserMedia(
 //   { video: true, audio: true },
 //   stream => {
