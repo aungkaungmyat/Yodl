@@ -1,6 +1,8 @@
 let model = require('./quickstart.js');
 
-model((error, result) => {
+qString = ""
+
+model(qString, (error, result) => {
     if(error) {
         console.log(error)
     } else {

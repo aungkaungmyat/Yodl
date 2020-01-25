@@ -9,11 +9,11 @@ var SCOPES = ['https://www.googleapis.com/auth/youtube.readonly'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json';
-var qString = "Let it go"
+
 
 // Load client secrets from a local file.
-module.exports = function(rback) {
-  var url = ""
+module.exports = function(qString, rback) {
+  
   fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   if (err) {
     console.log('Error loading client secret file: ' + err);
