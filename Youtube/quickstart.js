@@ -132,7 +132,7 @@ function getChannel(auth) {
 
 function getVideo(auth, qString, rback) {
   var service = google.youtube('v3');
-  var channelName = "sing king"
+  var channelName = "PARTY TYME KARAOKE CHANNEL"
   service.search.list({
     auth: auth,
     // part: 'snippet,contentDetails,statistics',
