@@ -41,27 +41,40 @@ module.exports = class Server {
     this.rooms[roomID] = {
       userStreams: {}
     }
-    this.io.on(roomID, socket => {
-      
-    })
     this.nextRoomID = roomID
   }
 
-  getNextRoom() {
-    if (this.rooms[this.nextRoomID].userStreams == 3) {
+  getNextRoom(data) {
+    if (Object.keys(this.rooms[this.nextRoomID].userStreams).length == 3) {
       this.nextRoom()
     }
+    this.rooms[this.nextRoomID].userStreams[data.uid] = data
     return this.nextRoomID
   }
   
   handleSocketConnection() {
     this.io.on("connection", socket => {
-      console.log("Socket connected.");
 
-      socket.send("hello world")
+      socket.on("join", data => {
+        const roomID = this.getNextRoom({
+          uid: randomstring.generate(),
+          socket,
+          streamData: {}
+        })
+
+        socket.join(roomID)
+
+        console.log("Should have joined room", this.nextRoomID)
+
+        socket.emit("join_accept", this.nextRoomID)
+      })
+
+
+      console.log("Socket connected.");
 
       socket.on("video", (data) => {
         console.log(data)
+        socket.emit("")
       })
     })
   }

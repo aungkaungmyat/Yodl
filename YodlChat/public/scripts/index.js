@@ -82,10 +82,24 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 
 socket.on("connect", () => {
   console.log("Sawkit kernekted")
-  axios.get('/get_room').then(response => {
-    const roomID = response.data.roomID
-    console.log("Should join room ID", roomID)
+
+  socket.emit("video", {hello: "world"})
+
+  socket.emit("join", {})
+
+  socket.on("join_accept", session => {
+    // start sending video
+    console.log("Joined room", session)
+
+    socket.on("video", data => {
+      console.log('recvd data', data)
+    })
   })
+
+
+
+  // axios.get('/get_room').then(response => {
+  // })
   // socket.emit('video')
 })
 
