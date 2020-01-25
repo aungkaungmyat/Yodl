@@ -3,6 +3,7 @@ const { createServer } = require('http')
 const socketIO = require('socket.io')
 const path = require('path')
 const randomstring = require('randomstring')
+const model = require('../Youtube/quickstart.js');
 
 module.exports = class Server {
   constructor() {
@@ -19,6 +20,8 @@ module.exports = class Server {
 
   init() {
     this.app = express();
+    // this.app.use(express.urlencoded())
+    // this.app.use(express.json())
     this.httpServer = createServer(this.app)
     this.io = socketIO(this.httpServer)
 
@@ -33,6 +36,15 @@ module.exports = class Server {
   handleRoutes() {
     this.app.get("/get_room", (req, res) => {
       res.json({roomID: this.getNextRoom()}); 
+    })
+    this.app.post('/searchsong/:songname', (req, res) => {
+      model(req.params.songname, (error, result) => {
+        if(error) {
+            res.json(404)
+        } else {
+            res.send(result)
+        }
+      })
     })
   }
 

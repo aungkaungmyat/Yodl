@@ -80,6 +80,27 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
   /* handle the error */
 });
 
+$('#submitSong').click((event) => {
+  event.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: '/searchsong/' + document.querySelector("#songname").value,
+    data: null,
+    success: loadVideo
+  });
+})
+
+function loadVideo(data, status) {
+  if (status == 'success') {
+    // $('#lyricVideo').src = data
+    var url = data.replace("watch?v=", "embed/");
+    document.querySelector('#lyricVideo').src = url
+    console.log('data and status: ' + data + ' ' + status)
+  } else {
+    console.log('error')
+  }
+}
+
 socket.on("connect", () => {
   console.log("Sawkit kernekted")
   axios.get('/get_room').then(response => {
