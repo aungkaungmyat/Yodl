@@ -83,6 +83,9 @@ module.exports = class Server {
 
           receptorSocket.on("video", (data) => {
             console.log("R: Got data from", receptorSocket.id, "should send to", initiatorSocket.id, data)
+            if (data.type === "answer") {
+              this.io.in(roomID).emit("chat_ready", roomID)
+            }
             this.io.to(initiatorSocket.id).emit("video",data)
           })
 

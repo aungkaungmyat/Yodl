@@ -65,15 +65,46 @@ const PROD = false;
 //   });
 // }
 
-const socket = PROD ? io.connect("https://yodl.aws.andrewarpasi.com") : io.connect("localhost:7007")
+const socket = PROD ? io.connect("wss://yodl.aws.andrewarpasi.com") : io.connect("localhost:7007")
 
 let offerCreated = false
 let activeStream = null
 
 const { RTCPeerConnection, RTCSessionDescription } = window
-const peerConnection = new RTCPeerConnection();
+const peerConnection = new RTCPeerConnection({
+  'iceServers': [
+    {
+      'urls': 'stun:stun.l.google.com:19302'
+    },
+    {
+      'urls': 'turn:192.158.29.39:3478?transport=udp',
+      'credential': 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+      'username': '28224511:1379330808'
+    },
+    {
+      'urls': 'turn:192.158.29.39:3478?transport=tcp',
+      'credential': 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
+      'username': '28224511:1379330808'
+    }
+  ]
+});
+
+// create our webrtc connection
+const webrtc = new SimpleWebRTC({
+  // the id/element dom element that will hold "our" video
+  localVideoEl: 'local-video',
+  // the id/element dom element that will hold remote videos
+  remoteVideosEl: 'remote-videos',
+  // immediately ask for camera access
+  autoRequestMedia: true,
+  debug: false,
+  detectSpeakingEvents: true,
+  autoAdjustMic: false,
+});
+
 
 const startVideo = () => {
+  console.log("Should start video!")
   navigator.mediaDevices.getUserMedia({ video: true, audio: true })
   .then(function(stream) {
     console.log(stream)
@@ -88,6 +119,15 @@ const startVideo = () => {
   .catch(function(err) {
     /* handle the error */
   });
+
+  peerConnection.ontrack = function({ streams: [stream] }) {
+    const remoteVideo = document.getElementById("remote-video");
+    if (remoteVideo) {
+      remoteVideo.srcObject = stream;
+    } else {
+      console.log("FUCc")
+    }
+  };
 }
 
 socket.on("connect", () => {
@@ -103,25 +143,27 @@ socket.on("connect", () => {
       console.log("Got video data", data)
       if (data.type === "offer") {
         console.log("Got an offer!")
-        peerConnection.createAnswer().then(answer => {
-          peerConnection.setLocalDescription(new RTCSessionDescription(answer)).then(() => {
-            socket.emit("video", {
-              roomID,
-              type: "answer",
-              answer,
+        peerConnection.setRemoteDescription(new RTCSessionDescription(data.offer)).then(() => {
+          peerConnection.createAnswer().then(answer => {
+            peerConnection.setLocalDescription(new RTCSessionDescription(answer)).then(() => {
+              socket.emit("video", {
+                roomID,
+                type: "answer",
+                answer,
+              })
             })
           })
         })
       }
-      if (data.type === "answer") {
-        activeStream.getTracks().forEach(track => peerConnection.addTrack(track, activeStream));
-      }
+      // if (data.type === "answer") {
+      //   startVideo();
+      // }
       //console.log('recvd data', data)
     })
   })
 
   socket.on("chat_ready", roomID => {
-    
+    startVideo();
   })
 })
 
