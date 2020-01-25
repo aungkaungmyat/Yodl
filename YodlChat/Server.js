@@ -20,8 +20,8 @@ module.exports = class Server {
 
   init() {
     this.app = express();
-    this.app.use(express.urlencoded())
-    this.app.use(express.json())
+    // this.app.use(express.urlencoded())
+    // this.app.use(express.json())
     this.httpServer = createServer(this.app)
     this.io = socketIO(this.httpServer)
 
@@ -37,8 +37,8 @@ module.exports = class Server {
     this.app.get("/get_room", (req, res) => {
       res.json({roomID: this.getNextRoom()}); 
     })
-    this.app.post('/searchsong', (req, res) => {
-      model(req.body.songname, (error, result) => {
+    this.app.post('/searchsong/:songname', (req, res) => {
+      model(req.params.songname, (error, result) => {
         if(error) {
             res.json(404)
         } else {

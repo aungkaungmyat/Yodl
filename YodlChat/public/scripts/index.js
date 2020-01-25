@@ -81,10 +81,11 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 });
 
 $('#submitSong').click((event) => {
+  event.preventDefault();
   $.ajax({
     type: "POST",
-    url: '/searchsong',
-    data: $("#songSearch").serialize(),
+    url: '/searchsong/' + document.querySelector("#songname").value,
+    data: null,
     success: loadVideo
   });
 })
