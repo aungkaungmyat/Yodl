@@ -89,8 +89,8 @@ $('#submitSong').click((event) => {
   });
 })
 
-function loadVideo() {
-  console.log('video should be loaded here')
+function loadVideo(data, status) {
+  console.log('data and status: ' + data + ' ' + status)
 }
 
 socket.on("connect", () => {

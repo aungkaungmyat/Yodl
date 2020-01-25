@@ -34,6 +34,9 @@ module.exports = class Server {
     this.app.get("/get_room", (req, res) => {
       res.json({roomID: this.getNextRoom()}); 
     })
+    this.app.post('/searchsong', (req, res) => {
+      res.json('done')
+    })
   }
 
   nextRoom() {
