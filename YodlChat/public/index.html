@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <title>Yodl</title>
+   <link
+     href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
+     rel="stylesheet"
+   />
+   <link rel="stylesheet" href="./styles.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+ </head>
+ <body>
+   <div class="container">
+     <header class="header">
+       <div class="logo-container">
+         <img src="./img/doge.png" alt="doge logo" class="logo-img" />
+         <h1 class="logo-text">
+           <span class="logo-highlight">Yo</span>dl
+         </h1>
+       </div>
+     </header>
+     <div class="content-container">
+       <div class="active-users-panel" id="active-user-container">
+         <h3 class="panel-title">Active Users:</h3>
+         <!-- <video autoplay class="remote-video" id="remote-video"></video> -->
+         <video autoplay muted class="local-video" id="local-video"></video>
+       </div>
+       <div class="video-chat-container">
+         <form action="#" id="songSearch">
+           Search for a song:
+          <input name="songname" type="text">
+          <input id="submitSong" type="submit" value="Search">
+         </form>
+         <h2 class="talk-info" id="talking-with-info"> 
+           Select active user on the left menu.
+         </h2>
+         <div class="video-container">
+           <iframe id="lyricVideo" width="600" height="400" src="https://www.youtube.com/embed/9_gkpYORQLU?list=PL4p8jNi9Ex5sWqk1m-oQdbTP0jT5T2fFS" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
+       </div>
+     </div>
+   </div>
+   <script src="./scripts/index.js"></script>
+ </body>
+</html>
