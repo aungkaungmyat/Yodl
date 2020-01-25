@@ -93,6 +93,15 @@ function loadVideo() {
   console.log('video should be loaded here')
 }
 
+socket.on("connect", () => {
+  console.log("Sawkit kernekted")
+  axios.get('/get_room').then(response => {
+    const roomID = response.data.roomID
+    console.log("Should join room ID", roomID)
+  })
+  // socket.emit('video')
+})
+
 // navigator.mediaDevices.getUserMedia(
 //   { video: true, audio: true },
 //   stream => {
