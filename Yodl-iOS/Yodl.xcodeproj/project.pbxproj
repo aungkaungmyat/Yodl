@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47FBC1FFA158C8813C6A160A /* Pods_YodlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595DC2FE511D941F2631CB80 /* Pods_YodlTests.framework */; };
+		4902CEA823DBEE7F00985C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4902CEA723DBEE7F00985C2B /* Main.storyboard */; };
+		4902CEAA23DBEE8A00985C2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902CEA923DBEE8A00985C2B /* ViewController.swift */; };
+		49D6EF7323DBEDCC00AA71EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EF7223DBEDCC00AA71EA /* AppDelegate.swift */; };
+		49D6EF7923DBEDCE00AA71EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D6EF7823DBEDCE00AA71EA /* Assets.xcassets */; };
+		49D6EF7C23DBEDCE00AA71EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D6EF7B23DBEDCE00AA71EA /* Preview Assets.xcassets */; };
+		49D6EF7F23DBEDCF00AA71EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D6EF7D23DBEDCF00AA71EA /* LaunchScreen.storyboard */; };
+		49D6EF8A23DBEDCF00AA71EA /* YodlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EF8923DBEDCF00AA71EA /* YodlTests.swift */; };
+		49D6EF9523DBEDCF00AA71EA /* YodlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EF9423DBEDCF00AA71EA /* YodlUITests.swift */; };
+		AC29A8D3DAFC6923834FB33D /* Pods_Yodl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F294C2FD23FE44B8A34CF5 /* Pods_Yodl.framework */; };
+		E0A6B742A83E591F0B117953 /* Pods_YodlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877CE87286FA71ADD34521E6 /* Pods_YodlUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49D6EF8623DBEDCF00AA71EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D6EF6723DBEDCC00AA71EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49D6EF6E23DBEDCC00AA71EA;
+			remoteInfo = Yodl;
+		};
+		49D6EF9123DBEDCF00AA71EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49D6EF6723DBEDCC00AA71EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49D6EF6E23DBEDCC00AA71EA;
+			remoteInfo = Yodl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18F294C2FD23FE44B8A34CF5 /* Pods_Yodl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yodl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F13911E4BC0F5541497A952 /* Pods-Yodl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yodl/Pods-Yodl.debug.xcconfig"; sourceTree = "<group>"; };
+		33525E6DF53954881B6829DA /* Pods-YodlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YodlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YodlTests/Pods-YodlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4902CEA723DBEE7F00985C2B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4902CEA923DBEE8A00985C2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49D6EF6F23DBEDCC00AA71EA /* Yodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D6EF7223DBEDCC00AA71EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49D6EF7823DBEDCE00AA71EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49D6EF7B23DBEDCE00AA71EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49D6EF7E23DBEDCF00AA71EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49D6EF8023DBEDCF00AA71EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D6EF8523DBEDCF00AA71EA /* YodlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YodlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D6EF8923DBEDCF00AA71EA /* YodlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YodlTests.swift; sourceTree = "<group>"; };
+		49D6EF8B23DBEDCF00AA71EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D6EF9023DBEDCF00AA71EA /* YodlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YodlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D6EF9423DBEDCF00AA71EA /* YodlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YodlUITests.swift; sourceTree = "<group>"; };
+		49D6EF9623DBEDCF00AA71EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		595DC2FE511D941F2631CB80 /* Pods_YodlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YodlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		877CE87286FA71ADD34521E6 /* Pods_YodlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YodlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		993A82531ACB1D2F38173970 /* Pods-YodlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YodlUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YodlUITests/Pods-YodlUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A302B13266E787F377566D95 /* Pods-YodlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YodlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YodlTests/Pods-YodlTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB847BE5FB453C8F336161F3 /* Pods-Yodl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yodl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yodl/Pods-Yodl.release.xcconfig"; sourceTree = "<group>"; };
+		ECC5F8583714DF3D5A50A924 /* Pods-YodlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YodlUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YodlUITests/Pods-YodlUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49D6EF6C23DBEDCC00AA71EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC29A8D3DAFC6923834FB33D /* Pods_Yodl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D6EF8223DBEDCF00AA71EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47FBC1FFA158C8813C6A160A /* Pods_YodlTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D6EF8D23DBEDCF00AA71EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0A6B742A83E591F0B117953 /* Pods_YodlUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49D6EF6623DBEDCC00AA71EA = {
+			isa = PBXGroup;
+			children = (
+				49D6EF7123DBEDCC00AA71EA /* Yodl */,
+				49D6EF8823DBEDCF00AA71EA /* YodlTests */,
+				49D6EF9323DBEDCF00AA71EA /* YodlUITests */,
+				49D6EF7023DBEDCC00AA71EA /* Products */,
+				CE935C25E3E6457C95A0BA5D /* Pods */,
+				7A5FDFA54DB17DBB51D5789D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		49D6EF7023DBEDCC00AA71EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EF6F23DBEDCC00AA71EA /* Yodl.app */,
+				49D6EF8523DBEDCF00AA71EA /* YodlTests.xctest */,
+				49D6EF9023DBEDCF00AA71EA /* YodlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49D6EF7123DBEDCC00AA71EA /* Yodl */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EF7223DBEDCC00AA71EA /* AppDelegate.swift */,
+				4902CEA923DBEE8A00985C2B /* ViewController.swift */,
+				4902CEA723DBEE7F00985C2B /* Main.storyboard */,
+				49D6EF7823DBEDCE00AA71EA /* Assets.xcassets */,
+				49D6EF7D23DBEDCF00AA71EA /* LaunchScreen.storyboard */,
+				49D6EF8023DBEDCF00AA71EA /* Info.plist */,
+				49D6EF7A23DBEDCE00AA71EA /* Preview Content */,
+			);
+			path = Yodl;
+			sourceTree = "<group>";
+		};
+		49D6EF7A23DBEDCE00AA71EA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EF7B23DBEDCE00AA71EA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49D6EF8823DBEDCF00AA71EA /* YodlTests */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EF8923DBEDCF00AA71EA /* YodlTests.swift */,
+				49D6EF8B23DBEDCF00AA71EA /* Info.plist */,
+			);
+			path = YodlTests;
+			sourceTree = "<group>";
+		};
+		49D6EF9323DBEDCF00AA71EA /* YodlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				49D6EF9423DBEDCF00AA71EA /* YodlUITests.swift */,
+				49D6EF9623DBEDCF00AA71EA /* Info.plist */,
+			);
+			path = YodlUITests;
+			sourceTree = "<group>";
+		};
+		7A5FDFA54DB17DBB51D5789D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18F294C2FD23FE44B8A34CF5 /* Pods_Yodl.framework */,
+				595DC2FE511D941F2631CB80 /* Pods_YodlTests.framework */,
+				877CE87286FA71ADD34521E6 /* Pods_YodlUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE935C25E3E6457C95A0BA5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F13911E4BC0F5541497A952 /* Pods-Yodl.debug.xcconfig */,
+				BB847BE5FB453C8F336161F3 /* Pods-Yodl.release.xcconfig */,
+				33525E6DF53954881B6829DA /* Pods-YodlTests.debug.xcconfig */,
+				A302B13266E787F377566D95 /* Pods-YodlTests.release.xcconfig */,
+				ECC5F8583714DF3D5A50A924 /* Pods-YodlUITests.debug.xcconfig */,
+				993A82531ACB1D2F38173970 /* Pods-YodlUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49D6EF6E23DBEDCC00AA71EA /* Yodl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49D6EF9923DBEDCF00AA71EA /* Build configuration list for PBXNativeTarget "Yodl" */;
+			buildPhases = (
+				929517B3482306A288D0ECC2 /* [CP] Check Pods Manifest.lock */,
+				49D6EF6B23DBEDCC00AA71EA /* Sources */,
+				49D6EF6C23DBEDCC00AA71EA /* Frameworks */,
+				49D6EF6D23DBEDCC00AA71EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Yodl;
+			productName = Yodl;
+			productReference = 49D6EF6F23DBEDCC00AA71EA /* Yodl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49D6EF8423DBEDCF00AA71EA /* YodlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49D6EF9C23DBEDCF00AA71EA /* Build configuration list for PBXNativeTarget "YodlTests" */;
+			buildPhases = (
+				DDDDFA0A4054FC985B1B4159 /* [CP] Check Pods Manifest.lock */,
+				49D6EF8123DBEDCF00AA71EA /* Sources */,
+				49D6EF8223DBEDCF00AA71EA /* Frameworks */,
+				49D6EF8323DBEDCF00AA71EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49D6EF8723DBEDCF00AA71EA /* PBXTargetDependency */,
+			);
+			name = YodlTests;
+			productName = YodlTests;
+			productReference = 49D6EF8523DBEDCF00AA71EA /* YodlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49D6EF8F23DBEDCF00AA71EA /* YodlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49D6EF9F23DBEDCF00AA71EA /* Build configuration list for PBXNativeTarget "YodlUITests" */;
+			buildPhases = (
+				C5D87738C4272BEBD1615E01 /* [CP] Check Pods Manifest.lock */,
+				49D6EF8C23DBEDCF00AA71EA /* Sources */,
+				49D6EF8D23DBEDCF00AA71EA /* Frameworks */,
+				49D6EF8E23DBEDCF00AA71EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49D6EF9223DBEDCF00AA71EA /* PBXTargetDependency */,
+			);
+			name = YodlUITests;
+			productName = YodlUITests;
+			productReference = 49D6EF9023DBEDCF00AA71EA /* YodlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49D6EF6723DBEDCC00AA71EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Andrew Arpasi";
+				TargetAttributes = {
+					49D6EF6E23DBEDCC00AA71EA = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					49D6EF8423DBEDCF00AA71EA = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 49D6EF6E23DBEDCC00AA71EA;
+					};
+					49D6EF8F23DBEDCF00AA71EA = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 49D6EF6E23DBEDCC00AA71EA;
+					};
+				};
+			};
+			buildConfigurationList = 49D6EF6A23DBEDCC00AA71EA /* Build configuration list for PBXProject "Yodl" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49D6EF6623DBEDCC00AA71EA;
+			productRefGroup = 49D6EF7023DBEDCC00AA71EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49D6EF6E23DBEDCC00AA71EA /* Yodl */,
+				49D6EF8423DBEDCF00AA71EA /* YodlTests */,
+				49D6EF8F23DBEDCF00AA71EA /* YodlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49D6EF6D23DBEDCC00AA71EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49D6EF7F23DBEDCF00AA71EA /* LaunchScreen.storyboard in Resources */,
+				49D6EF7C23DBEDCE00AA71EA /* Preview Assets.xcassets in Resources */,
+				49D6EF7923DBEDCE00AA71EA /* Assets.xcassets in Resources */,
+				4902CEA823DBEE7F00985C2B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D6EF8323DBEDCF00AA71EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D6EF8E23DBEDCF00AA71EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		929517B3482306A288D0ECC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yodl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5D87738C4272BEBD1615E01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YodlUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDDDFA0A4054FC985B1B4159 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YodlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49D6EF6B23DBEDCC00AA71EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4902CEAA23DBEE8A00985C2B /* ViewController.swift in Sources */,
+				49D6EF7323DBEDCC00AA71EA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D6EF8123DBEDCF00AA71EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49D6EF8A23DBEDCF00AA71EA /* YodlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49D6EF8C23DBEDCF00AA71EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49D6EF9523DBEDCF00AA71EA /* YodlUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49D6EF8723DBEDCF00AA71EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49D6EF6E23DBEDCC00AA71EA /* Yodl */;
+			targetProxy = 49D6EF8623DBEDCF00AA71EA /* PBXContainerItemProxy */;
+		};
+		49D6EF9223DBEDCF00AA71EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49D6EF6E23DBEDCC00AA71EA /* Yodl */;
+			targetProxy = 49D6EF9123DBEDCF00AA71EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49D6EF7D23DBEDCF00AA71EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49D6EF7E23DBEDCF00AA71EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49D6EF9723DBEDCF00AA71EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49D6EF9823DBEDCF00AA71EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49D6EF9A23DBEDCF00AA71EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F13911E4BC0F5541497A952 /* Pods-Yodl.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Yodl/Preview Content\"";
+				DEVELOPMENT_TEAM = NJKXF7XV99;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Yodl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aarpasi.Yodl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49D6EF9B23DBEDCF00AA71EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB847BE5FB453C8F336161F3 /* Pods-Yodl.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Yodl/Preview Content\"";
+				DEVELOPMENT_TEAM = NJKXF7XV99;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Yodl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aarpasi.Yodl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		49D6EF9D23DBEDCF00AA71EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33525E6DF53954881B6829DA /* Pods-YodlTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YodlTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aarpasi.YodlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yodl.app/Yodl";
+			};
+			name = Debug;
+		};
+		49D6EF9E23DBEDCF00AA71EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A302B13266E787F377566D95 /* Pods-YodlTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YodlTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aarpasi.YodlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yodl.app/Yodl";
+			};
+			name = Release;
+		};
+		49D6EFA023DBEDCF00AA71EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECC5F8583714DF3D5A50A924 /* Pods-YodlUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YodlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aarpasi.YodlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Yodl;
+			};
+			name = Debug;
+		};
+		49D6EFA123DBEDCF00AA71EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 993A82531ACB1D2F38173970 /* Pods-YodlUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YodlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aarpasi.YodlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Yodl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49D6EF6A23DBEDCC00AA71EA /* Build configuration list for PBXProject "Yodl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D6EF9723DBEDCF00AA71EA /* Debug */,
+				49D6EF9823DBEDCF00AA71EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49D6EF9923DBEDCF00AA71EA /* Build configuration list for PBXNativeTarget "Yodl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D6EF9A23DBEDCF00AA71EA /* Debug */,
+				49D6EF9B23DBEDCF00AA71EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49D6EF9C23DBEDCF00AA71EA /* Build configuration list for PBXNativeTarget "YodlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D6EF9D23DBEDCF00AA71EA /* Debug */,
+				49D6EF9E23DBEDCF00AA71EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49D6EF9F23DBEDCF00AA71EA /* Build configuration list for PBXNativeTarget "YodlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D6EFA023DBEDCF00AA71EA /* Debug */,
+				49D6EFA123DBEDCF00AA71EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49D6EF6723DBEDCC00AA71EA /* Project object */;
+}
