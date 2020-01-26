@@ -114,11 +114,12 @@ socket.on("connect", () => {
   axios.get('/get_room').then(response => {
     roomID = response.data.roomID
     document.querySelector('#room-id').textContent = 'Room ID: ' + roomID
+    document.querySelector('#room-id-share').textContent = 'Shareable link: ' + 'yodl.aws.andrewarpasi.com/vid.html?id=' + roomID
     socket.emit('create', roomID)
   })
 
   socket.on('room_start', () => {
-    $("#lyricVideo")[0].src += "?autoplay=1"
+    $("#lyricVideo")[0].src += "?autoplay=1&playsinline=1"
   })
 })
 
