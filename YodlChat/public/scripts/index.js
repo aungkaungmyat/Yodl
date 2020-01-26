@@ -103,6 +103,7 @@ function loadVideo(data, status) {
     var url = data.replace("watch?v=", "embed/");
     document.querySelector('#lyricVideo').src = url
     socket.emit('set_video', {iframe: document.querySelector('#lyricVideo').outerHTML, roomID: roomID })
+    $('#start-button').css('display','block');
   } else {
     console.log('error')
   }

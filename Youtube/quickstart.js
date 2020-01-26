@@ -105,10 +105,8 @@ function getVideo(auth, qString, rback) {
   var channelName = "PARTY TYME KARAOKE CHANNEL "
   service.search.list({
     auth: auth,
-    // part: 'snippet,contentDetails,statistics',
-    // forUsername: 'GoogleDevelopers'
     "part": "snippet",
-    "maxResults": 1,
+    "maxResults": 2,
     "q": channelName + qString
   }, function(err, response) {
     if (err) {
