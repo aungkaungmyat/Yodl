@@ -103,7 +103,6 @@ function storeToken(token) {
 function getVideo(auth, qString, rback) {
   var service = google.youtube('v3');
   var channelName = "PARTY TYME KARAOKE CHANNEL "
-  console.log(channelName + qString)
   service.search.list({
     auth: auth,
     "part": "snippet",
