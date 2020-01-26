@@ -10,6 +10,8 @@
 		47FBC1FFA158C8813C6A160A /* Pods_YodlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595DC2FE511D941F2631CB80 /* Pods_YodlTests.framework */; };
 		4902CEA823DBEE7F00985C2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4902CEA723DBEE7F00985C2B /* Main.storyboard */; };
 		4902CEAA23DBEE8A00985C2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4902CEA923DBEE8A00985C2B /* ViewController.swift */; };
+		49BBACDE23DD14B200831F51 /* MicSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BBACDD23DD14B200831F51 /* MicSession.swift */; };
+		49BBACE023DD2CD600831F51 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BBACDF23DD2CD600831F51 /* SessionViewController.swift */; };
 		49D6EF7323DBEDCC00AA71EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D6EF7223DBEDCC00AA71EA /* AppDelegate.swift */; };
 		49D6EF7923DBEDCE00AA71EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D6EF7823DBEDCE00AA71EA /* Assets.xcassets */; };
 		49D6EF7C23DBEDCE00AA71EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49D6EF7B23DBEDCE00AA71EA /* Preview Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		33525E6DF53954881B6829DA /* Pods-YodlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YodlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YodlTests/Pods-YodlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4902CEA723DBEE7F00985C2B /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4902CEA923DBEE8A00985C2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49BBACDD23DD14B200831F51 /* MicSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSession.swift; sourceTree = "<group>"; };
+		49BBACDF23DD2CD600831F51 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		49D6EF6F23DBEDCC00AA71EA /* Yodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D6EF7223DBEDCC00AA71EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D6EF7823DBEDCE00AA71EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 			children = (
 				49D6EF7223DBEDCC00AA71EA /* AppDelegate.swift */,
 				4902CEA923DBEE8A00985C2B /* ViewController.swift */,
+				49BBACDF23DD2CD600831F51 /* SessionViewController.swift */,
+				49BBACDD23DD14B200831F51 /* MicSession.swift */,
 				4902CEA723DBEE7F00985C2B /* Main.storyboard */,
 				49D6EF7823DBEDCE00AA71EA /* Assets.xcassets */,
 				49D6EF7D23DBEDCF00AA71EA /* LaunchScreen.storyboard */,
@@ -187,6 +193,7 @@
 				49D6EF6B23DBEDCC00AA71EA /* Sources */,
 				49D6EF6C23DBEDCC00AA71EA /* Frameworks */,
 				49D6EF6D23DBEDCC00AA71EA /* Resources */,
+				3D0D078C172EE91F5F8BA9BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +314,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3D0D078C172EE91F5F8BA9BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Yodl/Pods-Yodl-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yodl/Pods-Yodl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		929517B3482306A288D0ECC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,7 +396,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4902CEAA23DBEE8A00985C2B /* ViewController.swift in Sources */,
+				49BBACE023DD2CD600831F51 /* SessionViewController.swift in Sources */,
 				49D6EF7323DBEDCC00AA71EA /* AppDelegate.swift in Sources */,
+				49BBACDE23DD14B200831F51 /* MicSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

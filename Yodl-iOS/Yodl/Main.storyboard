@@ -35,13 +35,32 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="music.mic" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="64"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleMic:" destination="P3R-l5-Qpe" eventType="touchUpInside" id="JgL-OS-rI2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oai-ma-ZQu">
+                                <rect key="frame" x="293" y="48" width="66" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="5ff-Xd-CxX"/>
+                                    <constraint firstAttribute="width" constant="66" id="g8Z-0v-fVz"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="person.crop.circle.fill.badge.plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
+                                </state>
+                                <connections>
+                                    <action selector="sessionPress:" destination="P3R-l5-Qpe" eventType="touchUpInside" id="22B-U4-zTc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="oai-ma-ZQu" firstAttribute="top" secondItem="p7H-6G-e3Y" secondAttribute="top" constant="4" id="3Nx-Ru-fN0"/>
                             <constraint firstItem="p7H-6G-e3Y" firstAttribute="bottom" secondItem="DWb-Tt-gAW" secondAttribute="bottom" constant="20" id="9lR-jQ-S8E"/>
+                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="trailing" secondItem="oai-ma-ZQu" secondAttribute="trailing" constant="16" id="K38-bH-rzw"/>
                             <constraint firstItem="9AK-gR-0PE" firstAttribute="top" secondItem="p7H-6G-e3Y" secondAttribute="top" id="dA2-1R-ry9"/>
                             <constraint firstItem="DWb-Tt-gAW" firstAttribute="leading" secondItem="p7H-6G-e3Y" secondAttribute="leading" constant="20" id="jJP-b3-F5w"/>
                             <constraint firstItem="9AK-gR-0PE" firstAttribute="centerX" secondItem="bi9-Eo-tSI" secondAttribute="centerX" id="v3R-H3-O1Z"/>
@@ -49,13 +68,97 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p7H-6G-e3Y"/>
                     </view>
+                    <connections>
+                        <outlet property="micButton" destination="DWb-Tt-gAW" id="CVh-2n-FH5"/>
+                        <segue destination="HWt-iJ-Xyn" kind="presentation" identifier="sessionSegue" id="f8b-Y4-WDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMa-ny-UpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="-44.366197183098592"/>
+            <point key="canvasLocation" x="-285.60000000000002" y="-45.073891625615765"/>
+        </scene>
+        <!--Session View Controller-->
+        <scene sceneID="gp3-jq-h2A">
+            <objects>
+                <viewController id="HWt-iJ-Xyn" customClass="SessionViewController" customModule="Yodl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7tq-1N-rqy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-CM-5Vb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GC8-6r-MKL"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Join Session" id="6bN-Rr-PMh">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="bOv-8H-PfC">
+                                            <connections>
+                                                <action selector="cancelBtn:" destination="HWt-iJ-Xyn" id="crn-J2-lto"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Join" id="KY4-WY-0DP">
+                                            <connections>
+                                                <action selector="joinBtn:" destination="HWt-iJ-Xyn" id="hYy-5Q-Vvk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Session Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2k-vl-F3l">
+                                <rect key="frame" x="77.666666666666686" y="90" width="220" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="SOE-4B-GZi"/>
+                                    <constraint firstAttribute="height" constant="53" id="tA8-L0-CLw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-dU-nem">
+                                <rect key="frame" x="67.666666666666686" y="151" width="240" height="1"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Lns-lu-GEK"/>
+                                    <constraint firstAttribute="width" constant="240" id="bJJ-yh-91x"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join a karaoke session by entering the session code from the Yodl browser app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX4-AI-bMl">
+                                <rect key="frame" x="8" y="176" width="359" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aYc-5C-Ofu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="y2k-vl-F3l" firstAttribute="top" secondItem="T3E-CM-5Vb" secondAttribute="bottom" constant="46" id="15k-Xh-hIu"/>
+                            <constraint firstItem="AX4-AI-bMl" firstAttribute="leading" secondItem="7tq-1N-rqy" secondAttribute="leading" constant="8" id="80N-H4-0F9"/>
+                            <constraint firstItem="T3E-CM-5Vb" firstAttribute="leading" secondItem="xQm-fb-aYT" secondAttribute="leading" id="Lf8-Qb-cbg"/>
+                            <constraint firstItem="T3E-CM-5Vb" firstAttribute="top" secondItem="xQm-fb-aYT" secondAttribute="top" id="gyc-XC-7xF"/>
+                            <constraint firstItem="T3E-CM-5Vb" firstAttribute="trailing" secondItem="xQm-fb-aYT" secondAttribute="trailing" id="laB-pG-3uz"/>
+                            <constraint firstItem="AX4-AI-bMl" firstAttribute="top" secondItem="O9y-dU-nem" secondAttribute="bottom" constant="24" id="o3W-Or-etL"/>
+                            <constraint firstItem="O9y-dU-nem" firstAttribute="top" secondItem="y2k-vl-F3l" secondAttribute="bottom" constant="8" id="p9p-dZ-Mtt"/>
+                            <constraint firstItem="O9y-dU-nem" firstAttribute="centerX" secondItem="7tq-1N-rqy" secondAttribute="centerX" id="sVn-c7-Nel"/>
+                            <constraint firstItem="y2k-vl-F3l" firstAttribute="centerX" secondItem="7tq-1N-rqy" secondAttribute="centerX" id="tod-QS-2Q3"/>
+                            <constraint firstAttribute="trailing" secondItem="AX4-AI-bMl" secondAttribute="trailing" constant="8" id="xsK-gh-Ux0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xQm-fb-aYT"/>
+                    </view>
+                    <connections>
+                        <outlet property="sessionField" destination="y2k-vl-F3l" id="KGC-bj-zGa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFE-wN-h2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="556" y="-46.551724137931039"/>
         </scene>
     </scenes>
     <resources>
         <image name="music.mic" catalog="system" width="64" height="58"/>
+        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="64" height="50"/>
     </resources>
 </document>
