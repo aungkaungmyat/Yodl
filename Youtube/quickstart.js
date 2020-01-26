@@ -8,7 +8,7 @@ var OAuth2 = google.auth.OAuth2;
 var SCOPES = ['https://www.googleapis.com/auth/youtube.readonly'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/';
-var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json';
+var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart2.json';
 
 
 // Load client secrets from a local file.

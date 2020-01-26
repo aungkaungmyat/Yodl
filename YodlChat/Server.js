@@ -7,7 +7,7 @@ const model = require('../Youtube/quickstart.js');
 
 module.exports = class Server {
   constructor() {
-    this.DEFAULT_PORT = 7007
+    this.DEFAULT_PORT = 8080
 
     this.rooms = {}
 
