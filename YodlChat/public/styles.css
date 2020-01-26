@@ -113,6 +113,31 @@ body {
   margin-bottom: 10px;
 }
 
-/* #start-button {
+#start-button {
   display: none;
-} */
+  margin: 0 auto;
+  /* display: block; */
+  height: 3.5vh;
+  margin-right: 52.5%;
+  opacity: 0.7;
+  margin-bottom: 2vh;
+  background: #000000;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5vh;
+  transform: rotateX(-50%);
+}
+
+#submitSong {
+  height: 2.5vh;
+  opacity: 0.7;
+  background: #000000;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5vh;
+}
+
+#songname {
+  font-family: "Montserrat", sans-serif;
+  text-indent: 10px;
+}
