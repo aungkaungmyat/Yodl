@@ -9,7 +9,7 @@ module.exports = class Server {
   constructor() {
     this.DEFAULT_PORT = 7007
 
-    this.rooms = {}
+    this.rooms = new Map()
 
     this.init()
 
@@ -37,32 +37,24 @@ module.exports = class Server {
     this.app.get("/get_room", (req, res) => {
       res.json({roomID: this.getNextRoom()}); 
     })
-    this.app.post('/searchsong/:songname', (req, res) => {
+    this.app.post('/searchsong/:songname/:roomID', (req, res) => {
       model(req.params.songname, (error, result) => {
         if(error) {
-            res.json(404)
+          res.json(404)
         } else {
-            res.send(result)
+          res.send(result)
         }
       })
     })
   }
 
   nextRoom() {
-    const roomID = randomstring.generate()
-    this.rooms[roomID] = {
-      userStreams: {}
-    }
-    this.io.on(roomID, socket => {
-      
-    })
+    const roomID = randomstring.generate(6).toUpperCase()
     this.nextRoomID = roomID
   }
 
   getNextRoom() {
-    if (this.rooms[this.nextRoomID].userStreams == 3) {
-      this.nextRoom()
-    }
+    this.nextRoom()
     return this.nextRoomID
   }
   
@@ -70,10 +62,29 @@ module.exports = class Server {
     this.io.on("connection", socket => {
       console.log("Socket connected.");
 
-      socket.send("hello world")
+      socket.on('create', id => {
+        console.log('request to join ' + id)
+        socket.join(id)
+        this.rooms.set(id, '')
+      })
 
-      socket.on("video", (data) => {
+      socket.on('join', id => {
+        if (this.rooms.has(id)) {
+          socket.join(id)
+          if (this.rooms.get(id) != '') {
+            this.io.to(id).emit('room_video', this.rooms.get(id))
+          }
+        }
+      })
+
+      socket.on('set_video', data => {
         console.log(data)
+        this.rooms.set(data.roomID, data.iframe)
+        this.io.to(data.roomID).emit('room_video', data.iframe)
+      })
+
+      socket.on('start_video', roomID => {
+        this.io.in(roomID).emit('room_start')
       })
     })
   }

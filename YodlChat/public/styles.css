@@ -82,7 +82,7 @@ body {
   position: relative;
 }
 
-.talk-info {
+.display-id {
   font-weight: 500;
   font-size: 21px;
 }
@@ -108,3 +108,11 @@ body {
   width: 90%;
   height: 80%;
 }
+
+#songSearch {
+  margin-bottom: 10px;
+}
+
+/* #start-button {
+  display: none;
+} */
