@@ -7,16 +7,46 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
+    let micSession = MicSession()
+    
+    @IBOutlet weak var micButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if micSession.isActive {
+            micButton.backgroundColor = .systemPink
+        } else {
+            micButton.backgroundColor = .systemGreen
+        }
+        
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func sessionPress(_ sender: Any) {
+        self.performSegue(withIdentifier: "sessionSegue", sender: sender)
+    }
+    
+    @IBAction func toggleMic(_ sender: Any) {
+        micSession.toggle()
+        if micSession.isActive {
+            micButton.backgroundColor = .systemPink
+        } else {
+            micButton.backgroundColor = .systemGreen
+        }
+    }
+    
+    @IBAction func startMic(_ sender: Any) {
+        micSession.start()
+    }
+    
+    @IBAction func stopMic(_ sender: Any) {
+        micSession.stop()
+    }
     /*
     // MARK: - Navigation
 
