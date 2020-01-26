@@ -569,6 +569,7 @@
 				DEVELOPMENT_TEAM = NJKXF7XV99;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Yodl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,6 +591,7 @@
 				DEVELOPMENT_TEAM = NJKXF7XV99;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Yodl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

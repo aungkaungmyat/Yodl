@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P3R-l5-Qpe">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="P3R-l5-Qpe" customClass="ViewController" customModule="Yodl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bi9-Eo-tSI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yodl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AK-gR-0PE">
-                                <rect key="frame" x="138" y="44" width="99" height="58"/>
+                                <rect key="frame" x="157.5" y="44" width="99" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="9VQ-mV-Bu2"/>
                                     <constraint firstAttribute="width" constant="99" id="QCs-lM-gZn"/>
@@ -26,10 +26,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWb-Tt-gAW">
-                                <rect key="frame" x="20" y="578" width="335" height="180"/>
+                                <rect key="frame" x="20" y="482" width="374" height="360"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="Ydr-G7-87U"/>
+                                    <constraint firstAttribute="height" constant="360" id="HI9-8d-03K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -41,52 +41,49 @@
                                     <action selector="toggleMic:" destination="P3R-l5-Qpe" eventType="touchUpInside" id="JgL-OS-rI2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oai-ma-ZQu">
-                                <rect key="frame" x="293" y="48" width="66" height="53"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to sing!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ipF-vo-SVP">
+                                <rect key="frame" x="62" y="166" width="290" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="5ff-Xd-CxX"/>
-                                    <constraint firstAttribute="width" constant="66" id="g8Z-0v-fVz"/>
+                                    <constraint firstAttribute="height" constant="58" id="p4t-wS-Vbk"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" image="person.crop.circle.fill.badge.plus" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
-                                </state>
-                                <connections>
-                                    <action selector="sessionPress:" destination="P3R-l5-Qpe" eventType="touchUpInside" id="22B-U4-zTc"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oai-ma-ZQu" firstAttribute="top" secondItem="p7H-6G-e3Y" secondAttribute="top" constant="4" id="3Nx-Ru-fN0"/>
-                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="bottom" secondItem="DWb-Tt-gAW" secondAttribute="bottom" constant="20" id="9lR-jQ-S8E"/>
-                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="trailing" secondItem="oai-ma-ZQu" secondAttribute="trailing" constant="16" id="K38-bH-rzw"/>
+                            <constraint firstItem="DWb-Tt-gAW" firstAttribute="leading" secondItem="p7H-6G-e3Y" secondAttribute="leading" constant="20" id="3kQ-sp-GZ3"/>
+                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="trailing" secondItem="ipF-vo-SVP" secondAttribute="trailing" constant="62" id="E2e-qR-MUg"/>
+                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="bottom" secondItem="DWb-Tt-gAW" secondAttribute="bottom" constant="20" id="EON-PJ-rXj"/>
+                            <constraint firstItem="ipF-vo-SVP" firstAttribute="top" secondItem="9AK-gR-0PE" secondAttribute="bottom" constant="64" id="Fe1-Ld-kp9"/>
+                            <constraint firstItem="ipF-vo-SVP" firstAttribute="leading" secondItem="p7H-6G-e3Y" secondAttribute="leading" constant="62" id="cMP-1d-uKp"/>
                             <constraint firstItem="9AK-gR-0PE" firstAttribute="top" secondItem="p7H-6G-e3Y" secondAttribute="top" id="dA2-1R-ry9"/>
-                            <constraint firstItem="DWb-Tt-gAW" firstAttribute="leading" secondItem="p7H-6G-e3Y" secondAttribute="leading" constant="20" id="jJP-b3-F5w"/>
                             <constraint firstItem="9AK-gR-0PE" firstAttribute="centerX" secondItem="bi9-Eo-tSI" secondAttribute="centerX" id="v3R-H3-O1Z"/>
-                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="trailing" secondItem="DWb-Tt-gAW" secondAttribute="trailing" constant="20" id="zbr-38-iNo"/>
+                            <constraint firstItem="p7H-6G-e3Y" firstAttribute="trailing" secondItem="DWb-Tt-gAW" secondAttribute="trailing" constant="20" id="xnd-fQ-V1k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p7H-6G-e3Y"/>
                     </view>
                     <connections>
                         <outlet property="micButton" destination="DWb-Tt-gAW" id="CVh-2n-FH5"/>
+                        <outlet property="statusLabel" destination="ipF-vo-SVP" id="QDZ-cf-nvr"/>
                         <segue destination="HWt-iJ-Xyn" kind="presentation" identifier="sessionSegue" id="f8b-Y4-WDD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMa-ny-UpU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285.60000000000002" y="-45.073891625615765"/>
+            <point key="canvasLocation" x="-286.95652173913044" y="-45.535714285714285"/>
         </scene>
         <!--Session View Controller-->
         <scene sceneID="gp3-jq-h2A">
             <objects>
                 <viewController id="HWt-iJ-Xyn" customClass="SessionViewController" customModule="Yodl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7tq-1N-rqy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-CM-5Vb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="GC8-6r-MKL"/>
@@ -107,16 +104,16 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Session Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2k-vl-F3l">
-                                <rect key="frame" x="77.666666666666686" y="90" width="220" height="53"/>
+                                <rect key="frame" x="97" y="90" width="220" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="SOE-4B-GZi"/>
                                     <constraint firstAttribute="height" constant="53" id="tA8-L0-CLw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-dU-nem">
-                                <rect key="frame" x="67.666666666666686" y="151" width="240" height="1"/>
+                                <rect key="frame" x="87" y="151" width="240" height="1"/>
                                 <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Lns-lu-GEK"/>
@@ -124,7 +121,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join a karaoke session by entering the session code from the Yodl browser app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX4-AI-bMl">
-                                <rect key="frame" x="8" y="176" width="359" height="45"/>
+                                <rect key="frame" x="8" y="176" width="398" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="aYc-5C-Ofu"/>
                                 </constraints>
@@ -159,6 +156,5 @@
     </scenes>
     <resources>
         <image name="music.mic" catalog="system" width="64" height="58"/>
-        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="64" height="50"/>
     </resources>
 </document>
