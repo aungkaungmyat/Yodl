@@ -11,6 +11,7 @@ import UIKit
 class SessionViewController: UIViewController {
 
     @IBOutlet weak var sessionField: UITextField!
+    var callback: (String) -> Void = { str in }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class SessionViewController: UIViewController {
     }
     
     @IBAction func joinBtn(_ sender: Any) {
+        callback(sessionField.text!)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
