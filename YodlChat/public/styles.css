@@ -108,3 +108,11 @@ body {
   width: 90%;
   height: 80%;
 }
+
+#songSearch {
+  margin-bottom: 10px;
+}
+
+#start-button {
+  display: none;
+}

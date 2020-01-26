@@ -92,6 +92,10 @@ $('#submitSong').click((event) => {
   });
 })
 
+$('#start-button').click((e) => {
+  socket.emit('start_video', roomID)
+})
+
 function loadVideo(data, status) {
   if (status == 'success') {
     // $('#lyricVideo').src = data
@@ -109,6 +113,10 @@ socket.on("connect", () => {
     roomID = response.data.roomID
     document.querySelector('#room-id').textContent = 'Room ID: ' + roomID
     socket.emit('create', roomID)
+  })
+
+  socket.on('room_start', () => {
+    $("#lyricVideo")[0].src += "&autoplay=1"
   })
 })
 
