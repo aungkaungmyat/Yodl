@@ -66,6 +66,8 @@ const PROD = false;
 // }
 
 const socket = PROD ? io.connect("https://yodl.aws.andrewarpasi.com") : io.connect("localhost:7007")
+let roomID = ''
+
 
 navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 .then(function(stream) {
@@ -84,7 +86,7 @@ $('#submitSong').click((event) => {
   event.preventDefault();
   $.ajax({
     type: "POST",
-    url: '/searchsong/' + document.querySelector("#songname").value,
+    url: '/searchsong/' + document.querySelector("#songname").value + '/' + roomID,
     data: null,
     success: loadVideo
   });
@@ -95,7 +97,7 @@ function loadVideo(data, status) {
     // $('#lyricVideo').src = data
     var url = data.replace("watch?v=", "embed/");
     document.querySelector('#lyricVideo').src = url
-    console.log('data and status: ' + data + ' ' + status)
+    socket.emit('set_video', {iframe: document.querySelector('#lyricVideo').outerHTML, roomID: roomID })
   } else {
     console.log('error')
   }
@@ -104,10 +106,10 @@ function loadVideo(data, status) {
 socket.on("connect", () => {
   console.log("Sawkit kernekted")
   axios.get('/get_room').then(response => {
-    const roomID = response.data.roomID
-    console.log("Should join room ID", roomID)
+    roomID = response.data.roomID
+    document.querySelector('#room-id').textContent = 'Room ID: ' + roomID
+    socket.emit('create', roomID)
   })
-  // socket.emit('video')
 })
 
 // navigator.mediaDevices.getUserMedia(
