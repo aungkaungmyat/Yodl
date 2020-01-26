@@ -72,7 +72,7 @@ module.exports = class Server {
         if (this.rooms.has(id)) {
           socket.join(id)
           if (this.rooms.get(id) != '') {
-            socket.to(id).emit('room_video', this.rooms.get(id))
+            this.io.to(id).emit('room_video', this.rooms.get(id))
           }
         }
       })
@@ -80,7 +80,7 @@ module.exports = class Server {
       socket.on('set_video', data => {
         console.log(data)
         this.rooms.set(data.roomID, data.iframe)
-        socket.to(data.roomID).emit('room_video', data.iframe)
+        this.io.to(data.roomID).emit('room_video', data.iframe)
       })
 
       socket.on('start_video', roomID => {
