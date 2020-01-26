@@ -9,7 +9,7 @@ module.exports = class Server {
   constructor() {
     this.DEFAULT_PORT = 7007
 
-    this.rooms = {}
+    this.rooms = new Map()
 
     this.init()
 
@@ -65,21 +65,21 @@ module.exports = class Server {
       socket.on('create', id => {
         console.log('request to join ' + id)
         socket.join(id)
-        this.rooms[id] = ''
+        this.rooms.set(id, '')
       })
 
       socket.on('join', id => {
         if (this.rooms.has(id)) {
           socket.join(id)
-          if (this.rooms[id] != '') {
-            socket.emit('room_video', this.rooms[id])
+          if (this.rooms.get(id) != '') {
+            socket.emit('room_video', this.rooms.get(id))
           }
         }
       })
 
       socket.on('set_video', data => {
         console.log(data)
-        this.rooms[data.roomID] = data.iframe
+        this.rooms.set(data.roomID, data.iframe)
         socket.emit('room_video', data.iframe)
       })
     })
