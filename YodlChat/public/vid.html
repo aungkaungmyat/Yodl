@@ -41,7 +41,7 @@ socket.on("connect", () => {
 
   socket.on("room_start", body => {
     console.log("Should start video")
-    $("#lyricVideo")[0].src += "?autoplay=1";
+    $("#lyricVideo")[0].src += "?autoplay=1&playsinline=1";
   })
 })
 </script>

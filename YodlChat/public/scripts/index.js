@@ -117,7 +117,7 @@ socket.on("connect", () => {
   })
 
   socket.on('room_start', () => {
-    $("#lyricVideo")[0].src += "?autoplay=1"
+    $("#lyricVideo")[0].src += "?autoplay=1&playsinline=1"
   })
 })
 
