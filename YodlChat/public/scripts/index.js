@@ -94,6 +94,7 @@ $('#submitSong').click((event) => {
 
 $('#start-button').click((e) => {
   socket.emit('start_video', roomID)
+  document.querySelector('#start-button').style.display = 'block'
 })
 
 function loadVideo(data, status) {
