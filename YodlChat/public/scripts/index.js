@@ -113,6 +113,7 @@ socket.on("connect", () => {
   axios.get('/get_room').then(response => {
     roomID = response.data.roomID
     document.querySelector('#room-id').textContent = 'Room ID: ' + roomID
+    document.querySelector('#room-id-share').textContent = 'Sharable link: ' + 'yodl.aws.andrewarpasi.com/vid.html?id=' + roomID
     socket.emit('create', roomID)
   })
 
